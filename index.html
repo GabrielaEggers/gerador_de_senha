@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Senhas</title>
+    <title>Gerador de Senhas Seguro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,13 +11,13 @@
     <main class="conteudo">
         <header class="conteudo-titulo">
             <h1 class="titulo-principal">Gerador de Senhas</h1>
-            <p class="titulo-secundario">Crie senhas fortes e seguras instantaneamente</p>
+            <p class="titulo-secundario">Gere senhas fortes e aleatórias para proteger suas contas</p>
         </header>
 
         <section class="conteudo-senha">
-            <input type="text" id="campo-senha" readonly value="S3nh4@F0rt3">
+            <input type="text" id="campo-senha" readonly placeholder="Sua senha aparecerá aqui">
             <div class="parametro-senha-botoes">
-                <button class="parametro-senha__botao">Copiar</button>
+                <button id="btn-copiar" class="parametro-senha__botao">Copiar</button>
             </div>
         </section>
 
@@ -26,12 +26,31 @@
             
             <div class="parametro-senha">
                 <div class="parametro-coluna__senha">
-                    <span class="parametro-senha__titulo">Número de caracteres</span>
-                    <span class="parametro-senha__texto">12</span>
+                    <span class="parametro-senha__titulo">Número de caracteres:</span>
+                    <span id="valor-tamanho" class="parametro-senha__texto">12</span>
                 </div>
+                <input type="range" id="slider-tamanho" min="6" max="32" value="12" style="width: 100%; margin: 15px 0;">
             </div>
+
+            <div class="opcoes-container">
+                <label class="opcao-item">
+                    <input type="checkbox" id="chk-maiusculas" checked> Incluir Letras Maiúsculas
+                </label>
+                <label class="opcao-item">
+                    <input type="checkbox" id="chk-minusculas" checked> Incluir Letras Minúsculas
+                </label>
+                <label class="opcao-item">
+                    <input type="checkbox" id="chk-numeros" checked> Incluir Números
+                </label>
+                <label class="opcao-item">
+                    <input type="checkbox" id="chk-simbolos" checked> Incluir Símbolos
+                </label>
+            </div>
+
+            <button id="btn-gerar" class="btn-principal">Gerar Senha</button>
         </section>
     </main>
 
+    <script src="script.js"></script>
 </body>
 </html>
