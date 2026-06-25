@@ -3,53 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Senhas Seguro</title>
+    <title>Gerador de Senhas Pro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <main class="conteudo">
-        <header class="conteudo-titulo">
-            <h1 class="titulo-principal">Gerador de Senhas</h1>
-            <p class="titulo-secundario">Gere senhas fortes e aleatórias para proteger suas contas</p>
-        </header>
-
-        <section class="conteudo-senha">
-            <input type="text" id="campo-senha" readonly placeholder="Sua senha aparecerá aqui">
-            <div class="parametro-senha-botoes">
-                <button id="btn-copiar" class="parametro-senha__botao">Copiar</button>
-            </div>
-        </section>
-
-        <section class="parametro">
-            <h2 class="parametro-titulo">Personalize sua senha</h2>
+    <div class="app-container">
+        <main class="conteudo">
             
-            <div class="parametro-senha">
-                <div class="parametro-coluna__senha">
-                    <span class="parametro-senha__titulo">Número de caracteres:</span>
-                    <span id="valor-tamanho" class="parametro-senha__texto">12</span>
+            <header class="conteudo-titulo">
+                <h1 class="titulo-principal">PASSWORD_GENERATOR</h1>
+                <p class="titulo-secundario">Gere senhas criptográficas fortes instantaneamente.</p>
+            </header>
+
+            <section class="card-senha">
+                <input type="text" id="campo-senha" readonly placeholder="Clique em gerar...">
+                <button id="btn-copiar" class="btn-secundario" title="Copiar Senha">Copiar</button>
+            </section>
+
+            <section class="card-parametros">
+                <h2 class="parametro-titulo">Configurações</h2>
+                
+                <div class="controle-grupo">
+                    <div class="slider-header">
+                        <span class="label">Comprimento da senha</span>
+                        <span id="valor-tamanho" class="valor-display">12</span>
+                    </div>
+                    <input type="range" id="slider-tamanho" min="6" max="32" value="12" class="custom-slider">
                 </div>
-                <input type="range" id="slider-tamanho" min="6" max="32" value="12" style="width: 100%; margin: 15px 0;">
-            </div>
 
-            <div class="opcoes-container">
-                <label class="opcao-item">
-                    <input type="checkbox" id="chk-maiusculas" checked> Incluir Letras Maiúsculas
-                </label>
-                <label class="opcao-item">
-                    <input type="checkbox" id="chk-minusculas" checked> Incluir Letras Minúsculas
-                </label>
-                <label class="opcao-item">
-                    <input type="checkbox" id="chk-numeros" checked> Incluir Números
-                </label>
-                <label class="opcao-item">
-                    <input type="checkbox" id="chk-simbolos" checked> Incluir Símbolos
-                </label>
-            </div>
+                <button id="btn-gerar" class="btn-principal">GERAR NOVA SENHA</button>
+            </section>
 
-            <button id="btn-gerar" class="btn-principal">Gerar Senha</button>
-        </section>
-    </main>
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>

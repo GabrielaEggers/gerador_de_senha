@@ -1,25 +1,195 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600&display=swap');
 
 :root {
-    --branco: #FFFFFF;
-    --cor-de-fundo: #00162E;
-    --fundo-senha: #00244D;
-    --fundo-texto: #001E40;
-    --borda: #0075FF;
-    --borda-hover: #0056b3;
-    --roboto: 'Roboto', sans-serif;
-    --roboto-mono: 'Roboto Mono', monospace;
+    --bg-global: #0a0f1d;
+    --bg-card: #111827;
+    --bg-input: #1f2937;
+    --cor-primaria: #0075FF;
+    --cor-primaria-hover: #0056b3;
+    --cor-sucesso: #10b981;
+    --texto-principal: #f3f4f6;
+    --texto-secundario: #9ca3af;
+    --borda: rgba(255, 255, 255, 0.05);
+    
+    --fonte-sans: 'Inter', sans-serif;
+    --fonte-mono: 'JetBrains Mono', monospace;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-weight: 400;
 }
 
 body {
-    background-color: var(--cor-de-fundo);
-    color: var(--branco);
-    font-family: var(--roboto);
-    line
+    background-color: var(--bg-global);
+    color: var(--texto-principal);
+    font-family: var(--fonte-sans);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 480px; /* Mantém o app compacto e elegante como um app real */
+}
+
+/* Cabeçalho */
+.conteudo-titulo {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.titulo-principal {
+    font-family: var(--fonte-mono);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--cor-primaria);
+    margin-bottom: 8px;
+}
+
+.titulo-secundario {
+    font-size: 14px;
+    color: var(--texto-secundario);
+}
+
+/* Card de Exibição da Senha */
+.card-senha {
+    background: var(--bg-card);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+#campo-senha {
+    background: transparent;
+    border: none;
+    color: var(--texto-principal);
+    font-family: var(--fonte-mono);
+    font-size: 20px;
+    width: 70%;
+    outline: none;
+}
+
+/* Card de Parâmetros */
+.card-parametros {
+    background: var(--bg-card);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.parametro-titulo {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--texto-principal);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.controle-grupo {
+    margin-bottom: 24px;
+}
+
+.slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.label {
+    font-size: 14px;
+    color: var(--texto-secundario);
+}
+
+.valor-display {
+    font-family: var(--fonte-mono);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    background: rgba(0, 117, 255, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Customização do Slider (Range) */
+.custom-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--bg-input);
+    outline: none;
+}
+
+.custom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--cor-primaria);
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.custom-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* Botões */
+button {
+    font-family: var(--fonte-sans);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-principal {
+    width: 100%;
+    background: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.btn-principal:hover {
+    background: var(--cor-primaria-hover);
+    box-shadow: 0 0 15px rgba(0, 117, 255, 0.4);
+}
+
+.btn-secundario {
+    background: var(--bg-input);
+    color: var(--texto-principal);
+    border: 1px solid var(--borda);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.btn-secundario:hover {
+    background: #374151;
+    color: white;
+}
+
+/* Estado de Sucesso ao Copiar */
+.btn-secundario.copiado {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--cor-sucesso);
+    border-color: var(--cor-sucesso);
+}
